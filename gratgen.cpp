@@ -161,7 +161,9 @@
 #include <limits>
 #include <cmath>
 
+#ifdef BOOST
 #include <boost/progress.hpp>
+#endif
 
 #ifdef WITH_PROFILING
 #include <gperftools/profiler.h>
@@ -2509,7 +2511,9 @@ pos_t Verifier::fwd_pass() {
 void Verifier::bwd_pass(bool show_status_bar) {
 
   // Iterate over lemmas
+#ifdef BOOST
   boost::progress_display *pdsp = show_status_bar?new boost::progress_display(glb.get_num_items() - glb.get_fst_prf_item()) : nullptr;
+#endif
 
   size_t cycles_not_synched = 0;
 
@@ -2531,7 +2535,9 @@ void Verifier::bwd_pass(bool show_status_bar) {
   while (i>glb.get_fst_prf_item()) {
     --i;
 
+#ifdef BOOST
     if (pdsp) ++*pdsp;
+#endif
 
     item_t &item = glb.get_item(i);
 
