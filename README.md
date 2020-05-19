@@ -25,4 +25,4 @@ and make sure you have the [Boost](http://www.boost.org/) libraries on your incl
   run gratgen without arguments to get a list of all available options.
 
 ## Documentation
-Can be found in the [doc/](doc/html/index.html) folder.
+Can be found in the [doc/](https://www21.in.tum.de/~lammich/grat/gratgen-doc/) folder.
